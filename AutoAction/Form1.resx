@@ -120,4 +120,31 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="tbScript.Text" xml:space="preserve">
+    <value># Here is an example script based on Python programming language
+
+# Please install Python before use this app
+
+print("Hello World")
+
+# Use Left Mouse Click function (int x, int y, int delay)
+
+CallLeftClick(0,0,0)
+
+# Use Right Mouse Click function (int x, int y, int delay)
+
+CallRightClick(0,0,0)
+
+# Use Left Middle Click function (int x, int y, int delay)
+
+CallMiddleClick(0,0,0)
+
+# Send message via keyboard function (str message)
+
+CallKeyboardClick("Hello World")
+
+# Wait function (int millisecond)
+
+CallWait(1000)</value>
+  </data>
 </root>
