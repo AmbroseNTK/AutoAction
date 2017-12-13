@@ -12,6 +12,7 @@ B4. Sử dụng AutoActionLauncher.exe
  </p>
 ----
 <p>Hướng dẫn các hàm Auto Call</p>
+<p><b>Lưu ý: các tham số có dấu bằng cho phép không cần truyền đối số nếu không cần</b></p>
 <p>void CallLeftClick(int x, int y, int delay = 0, int time = 1, float interval = 0) : Nhấp chuột trái tại điểm (x,y) trên màn hình với thời gian nhấp là delay, số lần nhấp là time và khoảng thời gian giữa các lần nhấp là interval giây</p>
 <p>void CallRightClick(int x, int y, int delay =0, int time = 1, float interval = 0)</p>
 <p>void CallMiddleClick(int x, int y, int delay =0, int time = 1, float interval = 0)</p>
