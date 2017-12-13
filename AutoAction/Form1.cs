@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace AutoAction
 {
 
@@ -85,6 +86,7 @@ namespace AutoAction
             script += "from CallActions import *\n";
             script += tbScript.Text;
             File.WriteAllText(Application.StartupPath + "\\instance", script);
+
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.UseShellExecute = !chkHide.Checked;
@@ -94,6 +96,8 @@ namespace AutoAction
             process.StartInfo = startInfo;
             process.Start();
             process.WaitForExit();
+
+
             if (chkShutdown.Checked)
                 Application.Exit();
             this.WindowState = FormWindowState.Normal;
@@ -135,28 +139,10 @@ namespace AutoAction
             System.Diagnostics.ProcessStartInfo processStartInfo = new System.Diagnostics.ProcessStartInfo();
             processStartInfo.WorkingDirectory = dir;
             processStartInfo.FileName = "pyinstaller";
-            processStartInfo.Arguments = tempFile;
+            processStartInfo.Arguments = projectName+"_exec";
             process.StartInfo = processStartInfo;
             process.Start();
             process.WaitForExit();
-            File.Copy(Application.StartupPath + "\\AutoActionCMD.exe", dir + "\\dist\\"+projectName+"_exec\\"+"AutoActionCMD.exe");
-            AppShortcutToPath("\\dist\\" + projectName + "_exec\\" + projectName + "_exec.exe", dir);
-            File.Delete(tempFile);
-        }
-        private void AppShortcutToPath(string linkName, string source)
-        {
-            string deskDir = source;
-
-            using (StreamWriter writer = new StreamWriter(deskDir + "\\" + linkName + ".url"))
-            {
-                string app = linkName;
-                writer.WriteLine("[InternetShortcut]");
-                writer.WriteLine("URL=file:///" + app);
-                writer.WriteLine("IconIndex=0");
-                string icon = app.Replace('\\', '/');
-                writer.WriteLine("IconFile=" + icon);
-                writer.Flush();
-            }
         }
     }
 }

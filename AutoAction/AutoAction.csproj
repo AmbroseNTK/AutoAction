@@ -86,9 +86,13 @@
     <Content Include="CallActions.py">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Free-Blurred-Backgrounds.jpg" />
+    <None Include="Resources\TwitterBackground.png" />
+    <None Include="Resources\app_back2.jpg" />
+    <None Include="Resources\app_back1.jpg" />
+    <None Include="Resources\app_back11.png" />
+    <None Include="Resources\app_back1.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

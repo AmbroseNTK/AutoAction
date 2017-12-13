@@ -1,28 +1,68 @@
-import os
+import pyautogui
+import time
 
-def CallLeftClick(x,y,delay):
-    os.system("AutoActionCMD.exe mouse left "+str(x)+" "+str(y)+" "+str(delay))
+def CallLeftClick(x,y,delay=0,time=1,interval=0):
+    pyautogui.click(x,y,time,interval,'left',delay)
 
-def CallRightClick(x,y,delay):
-    os.system("AutoActionCMD.exe mouse right "+str(x)+" "+str(y)+" "+str(delay))
+def CallRightClick(x,y,delay=0,time=1,interval=0):
+    pyautogui.click(x,y,time,interval,'right',delay)
 
-def CallMiddleClick(x,y,delay):
-    os.system("AutoActionCMD.exe mouse middle "+str(x)+" "+str(y)+" "+str(delay))
 
-def CallKeyboardClick(data):
-    os.system("AutoActionCMD.exe key \""+str(data)+"\"")
+def CallMiddleClick(x,y,delay=0,time=1,interval=0):
+    pyautogui.click(x,y,time,interval,'middle',delay)
+
+def CallClick(x,y,buttonName = 'left',delay=0,time=1,interval=0):
+    pyautogui.click(x,y,time,interval,buttonName)
+
+def CallKeyboardClick(data, delay=0):
+    pyautogui.typewrite(data, interval=delay) 
+
+def CallHotkey(firstKey, secondKey=""):
+    pyautogui.hotkey(firstKey,secondKey)
+
+def CallScrollV(x,y,amount):
+    pyautogui.scroll(amount,x,y)
+
+def CallScrollH(x,y,amount):
+    pyautogui.hscroll(amount,x,y)
 
 def CallWait(delay):
-    os.system("AutoActionCMD.exe wait "+str(delay))
+    time.sleep(delay)
 
 def CallProcess(command):
-    os.system("AutoActionCMD.exe process "+str(command)+" \"\"")
+    os.system(str(command)+" \"\"")
 
 def CallProcess(command, args):
-    os.system("AutoActionCMD.exe process "+str(command)+" "+str(args))
+    os.system(str(command)+" "+str(args))
 
 def CallProcessWait(command):
-    os.system("AutoActionCMD.exe processwait "+str(command)+" \"\"")
+    os.system(str(command)+" \"\"")
 
 def CallProcessWait(command, args):
-    os.system("AutoActionCMD.exe processwait "+str(command)+" "+str(args))
+    os.system(str(command)+" "+str(args))
+
+def GetPos():
+    return pyautogui.position()
+
+def GetSize():
+    return pyautogui.size()
+
+def MakeMessage(text,alert=True,title=""):
+    if(alert==True):
+        return pyautogui.alert(text,title)
+    else:
+        return pyautogui.prompt(text,title)
+
+def CallMoveMouse(x, y, delay, rel=False):
+    if(rel == False):
+        pyautogui.moveTo(x,y,delay)
+    else:
+        pyautogui.moveRel(x,y,delay)
+
+def CallDrag(x,y,delay,rel=False):
+    if(rel == False):
+        pyautogui.dragTo(x,y,delay)
+    else:
+        pyautogui.dragRel(x,y,delay)
+
+pyautogui.FAILSAFE=False
