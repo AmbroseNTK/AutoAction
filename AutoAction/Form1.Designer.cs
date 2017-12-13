@@ -43,6 +43,7 @@
             this.btLoad = new System.Windows.Forms.Button();
             this.tbScript = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.chkHideApp = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -77,6 +78,7 @@
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.GhostWhite;
             this.splitContainer1.Panel1.BackgroundImage = global::AutoAction.Properties.Resources.Free_Blurred_Backgrounds;
             this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.splitContainer1.Panel1.Controls.Add(this.chkHideApp);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.chkShutdown);
             this.splitContainer1.Panel1.Controls.Add(this.btClose);
@@ -101,7 +103,7 @@
             this.chkShutdown.AutoSize = true;
             this.chkShutdown.BackColor = System.Drawing.Color.Transparent;
             this.chkShutdown.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.chkShutdown.Location = new System.Drawing.Point(94, 70);
+            this.chkShutdown.Location = new System.Drawing.Point(170, 69);
             this.chkShutdown.Name = "chkShutdown";
             this.chkShutdown.Size = new System.Drawing.Size(139, 17);
             this.chkShutdown.TabIndex = 11;
@@ -226,6 +228,20 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "AutoAction Script Editor 1.1b";
             // 
+            // chkHideApp
+            // 
+            this.chkHideApp.AutoSize = true;
+            this.chkHideApp.BackColor = System.Drawing.Color.Transparent;
+            this.chkHideApp.Checked = true;
+            this.chkHideApp.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkHideApp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.chkHideApp.Location = new System.Drawing.Point(94, 70);
+            this.chkHideApp.Name = "chkHideApp";
+            this.chkHideApp.Size = new System.Drawing.Size(70, 17);
+            this.chkHideApp.TabIndex = 13;
+            this.chkHideApp.Text = "Hide App";
+            this.chkHideApp.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,6 +278,7 @@
         private System.Windows.Forms.Button btBuild;
         private System.Windows.Forms.CheckBox chkShutdown;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox chkHideApp;
     }
 }
 

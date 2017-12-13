@@ -82,6 +82,8 @@ namespace AutoAction
         private void btRun_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+            if(chkHideApp.Checked)
+                this.Hide();
             string script = "";
             script += "from CallActions import *\n";
             script += tbScript.Text;
@@ -100,6 +102,7 @@ namespace AutoAction
 
             if (chkShutdown.Checked)
                 Application.Exit();
+            this.Show();
             this.WindowState = FormWindowState.Normal;
         }
 
