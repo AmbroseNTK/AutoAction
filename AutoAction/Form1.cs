@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
+using Microsoft.Win32;
 
 namespace AutoAction
 {
@@ -36,6 +36,20 @@ namespace AutoAction
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (File.Exists(Application.StartupPath + "\\default"))
+            {
+                this.Hide();
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                startInfo.UseShellExecute = false;
+                startInfo.CreateNoWindow = true;
+                startInfo.FileName = "python";
+                startInfo.Arguments = "default";
+                process.StartInfo = startInfo;
+                process.Start();
+                process.WaitForExit();
+                Application.Exit();
+            }
             timer1.Start();
            
         }
@@ -81,6 +95,8 @@ namespace AutoAction
 
         private void btRun_Click(object sender, EventArgs e)
         {
+            SetStartup();
+       
             this.WindowState = FormWindowState.Minimized;
             if(chkHideApp.Checked)
                 this.Hide();
@@ -88,6 +104,18 @@ namespace AutoAction
             script += "from CallActions import *\n";
             script += tbScript.Text;
             File.WriteAllText(Application.StartupPath + "\\instance", script);
+
+            if (chkSetStartupScript.Checked)
+            {
+                File.AppendAllText(Application.StartupPath + "\\default", script);
+            }
+            else
+            {
+                if (File.Exists(Application.StartupPath + "\\default"))
+                {
+                    File.Delete(Application.StartupPath + "\\default");
+                }
+            }
 
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
@@ -147,5 +175,17 @@ namespace AutoAction
             process.Start();
             process.WaitForExit();
         }
+        private void SetStartup()
+        {
+            RegistryKey rk = Registry.CurrentUser.OpenSubKey
+                ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+
+            if (chkStartup.Checked)
+                rk.SetValue("WindowsAction", Application.ExecutablePath.ToString());
+            else
+                rk.DeleteValue("WindowsAction", false);
+
+        }
+
     }
 }

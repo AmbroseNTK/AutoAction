@@ -44,6 +44,8 @@
             this.tbScript = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.chkHideApp = new System.Windows.Forms.CheckBox();
+            this.chkStartup = new System.Windows.Forms.CheckBox();
+            this.chkSetStartupScript = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -78,6 +80,8 @@
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.GhostWhite;
             this.splitContainer1.Panel1.BackgroundImage = global::AutoAction.Properties.Resources.Free_Blurred_Backgrounds;
             this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.splitContainer1.Panel1.Controls.Add(this.chkSetStartupScript);
+            this.splitContainer1.Panel1.Controls.Add(this.chkStartup);
             this.splitContainer1.Panel1.Controls.Add(this.chkHideApp);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.chkShutdown);
@@ -103,7 +107,7 @@
             this.chkShutdown.AutoSize = true;
             this.chkShutdown.BackColor = System.Drawing.Color.Transparent;
             this.chkShutdown.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.chkShutdown.Location = new System.Drawing.Point(170, 69);
+            this.chkShutdown.Location = new System.Drawing.Point(170, 70);
             this.chkShutdown.Name = "chkShutdown";
             this.chkShutdown.Size = new System.Drawing.Size(139, 17);
             this.chkShutdown.TabIndex = 11;
@@ -242,6 +246,30 @@
             this.chkHideApp.Text = "Hide App";
             this.chkHideApp.UseVisualStyleBackColor = false;
             // 
+            // chkStartup
+            // 
+            this.chkStartup.AutoSize = true;
+            this.chkStartup.BackColor = System.Drawing.Color.Transparent;
+            this.chkStartup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.chkStartup.Location = new System.Drawing.Point(315, 69);
+            this.chkStartup.Name = "chkStartup";
+            this.chkStartup.Size = new System.Drawing.Size(85, 17);
+            this.chkStartup.TabIndex = 14;
+            this.chkStartup.Text = "Auto Startup";
+            this.chkStartup.UseVisualStyleBackColor = false;
+            // 
+            // chkSetStartupScript
+            // 
+            this.chkSetStartupScript.AutoSize = true;
+            this.chkSetStartupScript.BackColor = System.Drawing.Color.Transparent;
+            this.chkSetStartupScript.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.chkSetStartupScript.Location = new System.Drawing.Point(406, 68);
+            this.chkSetStartupScript.Name = "chkSetStartupScript";
+            this.chkSetStartupScript.Size = new System.Drawing.Size(131, 17);
+            this.chkSetStartupScript.TabIndex = 15;
+            this.chkSetStartupScript.Text = "Set this script auto run";
+            this.chkSetStartupScript.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,6 +307,8 @@
         private System.Windows.Forms.CheckBox chkShutdown;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox chkHideApp;
+        private System.Windows.Forms.CheckBox chkSetStartupScript;
+        private System.Windows.Forms.CheckBox chkStartup;
     }
 }
 
