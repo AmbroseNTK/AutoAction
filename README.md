@@ -16,7 +16,7 @@ B4. Sử dụng AutoActionLauncher.exe
 <p><b>void CallLeftClick(int x, int y, int delay = 0, int time = 1, float interval = 0)</b> : Nhấp chuột trái tại điểm (x,y) trên màn hình với thời gian nhấp là delay, số lần nhấp là time và khoảng thời gian giữa các lần nhấp là interval giây</p>
 <p><b>void CallRightClick(int x, int y, int delay =0, int time = 1, float interval = 0)</b></p>
 <p><b>void CallMiddleClick(int x, int y, int delay =0, int time = 1, float interval = 0)</b></p>
-<p><b>void CallClick(int x, int y, str button = "left", int delay = 0, int time = 1, float interval = 0)</b>: Nhấp chuột button tại điểm x, y với thời gian nhấp là delay, số lần nhấp là time, khoảng thời gian chờ giữa các lần nhấp là interval giây</p>
+<p><b>void CallClick(int x, int y, str button = "left", int delay = 0, int time = 1, float interval = 0)</b>: Nhấp chuột button("left","right","middle") tại điểm x, y với thời gian nhấp là delay, số lần nhấp là time, khoảng thời gian chờ giữa các lần nhấp là interval giây</p>
 <p><b>void CallKeyboardClick(str data, int delay = 0) </b>: Gõ các phím trong chuỗi data với thời gian chờ giữa các phím là delay giây</p>
 <p><b>void CallHotkey(str firstKey, str secondKey="")</b>: Gõ các phím nóng ctrl, shift, alt, f1, f2,... và các tổ hợp phím</p>
 <p><b>void CallProcess(str command, str args) </b>: Gọi các lệnh command với đối số args</p>
